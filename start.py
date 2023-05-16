@@ -3,6 +3,7 @@ import sys
 import pygame
 
 from setttings import Settings
+from ship import Ship
 
 def run_game():
     #Initialize game and create a screen object
@@ -14,6 +15,9 @@ def run_game():
     #Setting background color
     bg_color = (230, 230, 230)
 
+    #Make a ship
+    ship = Ship(screen)
+    
     #Start the main loop for the game
     while True:
 

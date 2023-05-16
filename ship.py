@@ -15,4 +15,4 @@ class Ship():
         self.react.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.buttom
 
-    des bitme(self):
+    def bitme(self):

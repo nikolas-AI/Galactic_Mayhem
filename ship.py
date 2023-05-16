@@ -10,3 +10,6 @@ class Ship():
         self.image = pygame.image.load('ship.png')
         self.react = self.imagine.get_rect()
         self.screen_rect = screen.get_rect()
+
+        #Start each new ship at the bottom center of the screen.
+        

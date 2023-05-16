@@ -8,11 +8,11 @@ class Ship():
 
         #Load the ship image and get its rect.
         self.image = pygame.image.load('ship.png')
-        self.react = self.image.get_rect()
+        self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
         #Start each new ship at the bottom center of the screen.
-        self.react.centerx = self.screen_rect.centerx
+        self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
     def blitme(self):

@@ -15,6 +15,6 @@ class Ship():
         self.react.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.buttom
 
-    def bitme(self):
+    def blitme(self):
         """Draw the ship at its current location."""
         self.screen.blit(self.image, self.react)

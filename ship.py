@@ -13,7 +13,7 @@ class Ship():
 
         #Start each new ship at the bottom center of the screen.
         self.react.centerx = self.screen_rect.centerx
-        self.rect.bottom = self.screen_rect.buttom
+        self.rect.bottom = self.screen_rect.bottom
 
     def blitme(self):
         """Draw the ship at its current location."""

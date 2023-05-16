@@ -12,4 +12,5 @@ class Ship():
         self.screen_rect = screen.get_rect()
 
         #Start each new ship at the bottom center of the screen.
-        
+        self.react.centerx = self.screen_rect.centerx
+        self.rect.bottom = self.screen_rect.buttom

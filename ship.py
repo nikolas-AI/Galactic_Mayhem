@@ -16,3 +16,5 @@ class Ship():
         self.rect.bottom = self.screen_rect.buttom
 
     def bitme(self):
+        """Draw the ship at its current location."""
+        

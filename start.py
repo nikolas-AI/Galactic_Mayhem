@@ -13,11 +13,11 @@ def run_game():
     pygame.display.set_caption("Alien Invaison")
 
     #Setting background color
-    bg_color = (230, 230, 230)
+    # bg_color = (230, 230, 230)
 
     #Make a ship
     ship = Ship(screen)
-    
+
     #Start the main loop for the game
     while True:
 
@@ -25,6 +25,7 @@ def run_game():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+                
         #redraw the screen during each pass through the loop
         screen.fill(ai_settings.bg_color)
 

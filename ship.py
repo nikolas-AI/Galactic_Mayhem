@@ -14,3 +14,5 @@ class Ship():
         #Start each new ship at the bottom center of the screen.
         self.react.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.buttom
+
+    des bitme(self):

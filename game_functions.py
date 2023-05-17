@@ -10,7 +10,7 @@ def check_events(ship):
         elif event.type == pygame.KEYDOWN:
              if event.key == pygame.K_RIGHT:
                   #Move the ship to the right.
-                  ship.rect.centerx +=1
+                  ship.rect.centerx +=5
              
 
 def update_screen(ai_settings, screen, ship):

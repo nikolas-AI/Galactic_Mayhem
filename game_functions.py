@@ -65,10 +65,12 @@ def update_bullets(bullets):
             if bullet.bullet_rect.bottom <= 0:
                 bullets.remove(bullet)
 
-def update_aliens(aliens):
-     """Update the position of all aliens in the fleet."""
-     aliens.update()
-     
+
+
+
+
+
+
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Fire a bullet if limit not reached yet."""
     #Create a newbullet and add it t the bullets group.

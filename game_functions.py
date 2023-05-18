@@ -64,7 +64,7 @@ def update_bullets(bullets):
         for bullet in bullets.copy():
             if bullet.bullet_rect.bottom <= 0:
                 bullets.remove(bullet)
-
+                
 def check_fleet_edges(ai_settings, aliens):
      """Respond appropriately of any aliens have reached an edge."""
      for alien in aliens.sprites():
@@ -78,7 +78,9 @@ def change_fleet_direction(ai_settings, aliens):
           alien.rect.y += ai_settings.fleet_drop_speed
      ai_settings.fleet_diretion *= -1
 
-
+def update_aliens(ai_settings, aliens):
+     """Check if the fleet is at an edge, and then update the postions of all aliens in the fleet."""
+     check_fleet_edges(ai_settings, aliens)
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Fire a bullet if limit not reached yet."""

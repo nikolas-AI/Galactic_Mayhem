@@ -65,7 +65,12 @@ def update_bullets(bullets):
             if bullet.bullet_rect.bottom <= 0:
                 bullets.remove(bullet)
 
-
+def check_fleet_edges(ai_settings, aliens):
+     """Respond appropriately of any aliens have reached an edge."""
+     for alien in aliens.sprites():
+          if alien.check_edge():
+               change_fleet_direction(ai_settings, aliens)
+               break
 
 
 

@@ -72,7 +72,11 @@ def check_fleet_edges(ai_settings, aliens):
                change_fleet_direction(ai_settings, aliens)
                break
 
-
+def change_fleet_direction(ai_settings, aliens):
+     """Drop the entire fleet and change the fleet's direction."""
+     for alien in aliens.sprites():
+          alien.rect.y += ai_settings.fleet_drop_speed
+     ai_settings.fleet_diretion *= -1
 
 
 

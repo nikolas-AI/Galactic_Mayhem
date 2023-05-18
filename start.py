@@ -16,7 +16,7 @@ def run_game():
     bg = pygame.image.load('images/bg.jfif')
     bg1 = pygame.image.load('images/bg.jfif')
     
-    pygame.display.set_caption("Alien Invaison")
+    pygame.display.set_caption("The Invaison")
 
     
     #Make a ship, a group to store bullets in, and a group of aliens.

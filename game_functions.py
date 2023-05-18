@@ -73,6 +73,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
             bullets.add(new_bullet)
     
 
+
 def get_number_aliens_x(ai_settings, alien_width):
      """Determine the number of aliens that fit in a row."""
      available_space_x = ai_settings.screen_width - (2 * alien_width)

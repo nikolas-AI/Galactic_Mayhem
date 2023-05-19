@@ -62,7 +62,7 @@ def update_bullets(aliens, bullets):
 
         #Get rid of bullets that have disappeared.
         for bullet in bullets.copy():
-            if bullet.bullet_rect.bottom <= 0:
+            if bullet.rect.bottom <= 0:
                 bullets.remove(bullet)
         #Check for any bullets that have hit aliens.
         #If so, get rid of the bullets and the alien.

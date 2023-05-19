@@ -66,7 +66,7 @@ def update_bullets(ai_settings, screen, ship, aliens, bullets):
                 bullets.remove(bullet)
 
         check_bullet_alien_collison(ai_settings, screen, ship, aliens, bullets)
-        
+
 def check_bullet_alien_collison(ai_settings, screen, ship, aliens, bullets):
     """Responds to bullet-alien collisions."""
     #Check for any bullets that have hit aliens.
@@ -90,10 +90,14 @@ def change_fleet_direction(ai_settings, aliens):
           alien.rect.y += ai_settings.fleet_drop_speed
      ai_settings.fleet_direction *= -1
 
-def update_aliens(ai_settings, aliens):
+def update_aliens(ai_settings, ship, aliens):
      """Check if the fleet is at an edge, and then update the postions of all aliens in the fleet."""
      check_fleet_edges(ai_settings, aliens)
      aliens.update()
+
+     #Look for the aluen_ship collections.
+     if pygame.sprite.spritecolliedany(ship, aliens):
+          print("Ship hit! !!")
 
 def fire_bullet(ai_settings, screen, ship, bullets):
     """Fire a bullet if limit not reached yet."""

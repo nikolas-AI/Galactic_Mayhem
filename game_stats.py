@@ -1,4 +1,4 @@
-class gameStats():
+class GameStats():
     """"Trak statistics for Alien Invasion."""
 
     def __init__(self, ai_settings):

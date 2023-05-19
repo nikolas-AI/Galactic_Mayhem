@@ -96,7 +96,7 @@ def update_aliens(ai_settings, ship, aliens):
      aliens.update()
 
      #Look for the aluen_ship collections.
-     if pygame.sprite.spritecolliedany(ship, aliens):
+     if pygame.sprite.spritecollideany(ship, aliens):
           print("Ship hit! !!")
 
 def fire_bullet(ai_settings, screen, ship, bullets):
@@ -135,7 +135,7 @@ def create_fleet(ai_settings, screen, ship, aliens):
      #Spacing between each alien is equal to one alien width.
      alien = Alien(ai_settings, screen)
      number_aliens_x = get_number_aliens_x(ai_settings, alien.rect.width)
-     number_of_rows = get_number_rows(ai_settings, ship.ship_rect.height, alien.rect.height)
+     number_of_rows = get_number_rows(ai_settings, ship.rect.height, alien.rect.height)
      
      #Create the fleet of aliens.
      for row_number in range(number_of_rows):

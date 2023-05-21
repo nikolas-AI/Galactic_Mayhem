@@ -28,4 +28,5 @@ class Button():
 
     def draw_buttons(self):
         #Draw blank button and then draw message.
-        
+        self.scren.fill(self.button_color, self.rect)
+        self.screen.blit(self.msg_image, self.msg_image_rect)

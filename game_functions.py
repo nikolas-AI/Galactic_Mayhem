@@ -39,8 +39,10 @@ def check_events(ai_settings, screen, stats, play_button, ship, bullets):
              mouse_x, mouse_y = pygame.mouse.get_pos()
              check_play_buttons(stats, play_button, mouse_x, mouse_y)
 
-           
-             
+def check_play_buttons(stats, play_buttons, mouse_x, mouse_y):
+     """Start a new game when the player clicks Play."""
+     if play_buttons.rect.collidepoint(mouse_x, mouse_y):
+          stats.game_active =True        
 
 def update_screen(ai_settings, screen, bg, bg1, stats, ship, aliens, bullets, play_button):
         """Updates images on the screen and flip to the new screen."""

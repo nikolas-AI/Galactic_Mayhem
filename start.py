@@ -20,6 +20,8 @@ def run_game():
     pygame.display.set_caption("The Invaison")
 
     #Make the Play Button
+    play_button = Button(ai_settings, screen, 'Play')
+    
     #Create an instance to store game statistics.
     stats = GameStats(ai_settings)
 

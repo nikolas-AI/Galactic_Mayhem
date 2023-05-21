@@ -37,7 +37,8 @@ def check_events(ai_settings, screen, stats, play_button, ship, bullets):
 
         elif event.type == pygame.MOUSEBUTTONDOWN:
              mouse_X, mouse_y = pygame.mouse.get_pos()
-             
+             check_play_buttons(stats, play_button, mouse_X, mouse_y)
+
            
              
 

@@ -40,7 +40,7 @@ def check_events(ai_settings, screen, stats, play_button, ship, bullets):
              check_play_buttons(stats, play_button, mouse_x, mouse_y)
 
 def check_play_buttons(stats, play_buttons, mouse_x, mouse_y):
-     """Start a new game when the player clicks Play."""
+     """Start a new game only when the player clicks Play."""
      if play_buttons.rect.collidepoint(mouse_x, mouse_y):
           stats.game_active =True        
 

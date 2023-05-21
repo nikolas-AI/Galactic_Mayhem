@@ -52,7 +52,10 @@ def update_screen(ai_settings, screen, bg, bg1, stats, ship, aliens, bullets, pl
         ship.blitme()
         # alien.blitme()
         aliens.draw(screen)
-
+        # Draw the play button if the game is inactive.
+        if not stats.game_active:
+            play_button.draw_button()
+            
         #Make most recently drawn screen visible
         pygame.display.flip()
 

@@ -84,7 +84,6 @@ def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets,
             bullet.draw_bullets()
 
         ship.blitme()
-        # alien.blitme()
         aliens.draw(screen)
         
         #Draw the score information.

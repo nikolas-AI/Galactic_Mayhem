@@ -1,2 +1,2 @@
-Your Highest score is: 500
-Your recent score is: 500
+Your Highest score is: 200
+Your recent score is: 200

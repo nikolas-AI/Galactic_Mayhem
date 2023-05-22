@@ -83,6 +83,7 @@ def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets,
         
         #Draw the score information.
         scoreb.show_score()
+
         # Draw the play button if the game is inactive.
         if not stats.game_active:
             play_button.draw_button()
@@ -111,6 +112,7 @@ def check_bullet_alien_collison(ai_settings, screen, stats, scoreb, ship, aliens
          for aliens in collision.values():
             stats.score += ai_settings.alien_points * len(aliens)
             scoreb.prep_score()
+         check_high_score(stats, scoreb)
 
     if len(aliens) == 0:
         #Destroy existing bullets and create new fleet.
@@ -157,7 +159,7 @@ def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
      for alien in aliens.sprites():
           if alien.rect.bottom >= screen_rect.bottom:
                #Treate this same as if the ship got hit.
-               ship_hit(ai_settings, stats, ship, aliens, bullets)
+               ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
 
 def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
      """Check if the fleet is at an edge, and then update the postions of all aliens in the fleet."""
@@ -213,3 +215,9 @@ def create_fleet(ai_settings, screen, ship, aliens):
      for row_number in range(number_of_rows):
           for alien_number in range(number_aliens_x):
             create_alien(ai_settings, screen, aliens, alien_number, row_number)
+
+def check_high_score(stats, scoreb):
+     """Check to see if there's a new high score."""
+     if stats.score > stats.high_score:
+          stats.high_score = stats.score
+          scoreb.prep_high_score()

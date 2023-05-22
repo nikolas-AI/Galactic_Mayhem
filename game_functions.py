@@ -1,5 +1,6 @@
 import sys
 from time import sleep
+import json
 
 import pygame
 
@@ -166,6 +167,11 @@ def ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      else:
         stats.game_active = False
         pygame.mouse.set_visible(True)
+
+        filename = 'leaderboard.txt'
+        with open(filename, 'a') as highscore:
+             highscore.write(f"Your Highest score is: {str(stats.high_score)}.\n")
+             highscore.write(f"Your recent score is: {str(stats.score)}.\n")
        
 
 def check_aliens_bottom(ai_settings, stats, scoreb, screen, ship, aliens, bullets):

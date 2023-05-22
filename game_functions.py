@@ -1,6 +1,5 @@
 import sys
 from time import sleep
-import json
 
 import pygame
 
@@ -167,12 +166,8 @@ def ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      else:
         stats.game_active = False
         pygame.mouse.set_visible(True)
-
-        filename = 'leaderboard.txt'
-        with open(filename, 'a') as highscore:
-             highscore.write(f"Your Highest score is: {str(stats.high_score)}.\n")
-             highscore.write(f"Your recent score is: {str(stats.score)}.\n")
-       
+        store_scores(stats)
+     
 
 def check_aliens_bottom(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      """Check if any aliens have reached the bottom of the screen."""
@@ -242,3 +237,28 @@ def check_high_score(stats, scoreb):
      if stats.score > stats.high_score:
           stats.high_score = stats.score
           scoreb.prep_high_score()
+
+filename ='leaderboard.txt'
+def store_scores(stats):
+     read(stats)
+
+def read(stats):
+     try:
+        with open(filename) as reader:
+                for line in reader:
+                    line = line.split(' ')
+                    for a, score in enumerate(line):
+                        if int(line[4]) > stats.high_score:
+                            hsc = line[4]
+                            with open(filename, 'a') as highscore:
+                                highscore.write(f"Your Highest score is: {hsc}\n")
+                                highscore.write(f"Your recent score is: {stats.score}\n")
+                            break
+     except FileNotFoundError:
+          write(stats)
+
+def write(stats):                  
+    with open(filename, 'a') as highscore:
+        hsc = stats.high_score
+        highscore.write(f"Your Highest score is: {hsc}\n")
+        highscore.write(f"Your recent score is: {stats.score}\n")

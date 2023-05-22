@@ -9,7 +9,7 @@ class Settings():
         self.bg_color = 'steelblue'
 
         #Ship settings
-        self.ship_limit = 3
+        self.ship_limit = 1
 
         #Bullet settings
         self.bullet_width = 3

@@ -44,13 +44,12 @@ def check_play_buttons(stats, play_buttons, mouse_x, mouse_y):
      if play_buttons.rect.collidepoint(mouse_x, mouse_y):
           stats.game_active =True        
 
-def update_screen(ai_settings, screen, bg, bg1, stats, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, bg, stats, ship, aliens, bullets, play_button):
         """Updates images on the screen and flip to the new screen."""
         #Redraw the screen during each pass through the loop
         screen.fill(ai_settings.bg_color)
 
         screen.blit(bg, (0,0))
-        screen.blit(bg1, (500,0))
 
         #Redraw all bullets behind ship and aliens.
         for bullet in bullets.sprites():
@@ -152,8 +151,8 @@ def fire_bullet(ai_settings, screen, ship, bullets):
 
 def get_number_aliens_x(ai_settings, alien_width):
      """Determine the number of aliens that fit in a row."""
-     available_space_x = ai_settings.screen_width - (2 * alien_width)
-     number_aliens_x = int(available_space_x / (2 * alien_width))
+     available_space_x = ai_settings.screen_width - (1.5 * alien_width)
+     number_aliens_x = int(available_space_x / (1.5 * alien_width))
      return number_aliens_x
 
 def get_number_rows(ai_settings, ship_height, alien_height):

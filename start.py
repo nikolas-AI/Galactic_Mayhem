@@ -14,8 +14,8 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
 
-    bg = pygame.image.load('images/bg.jfif')
-    bg1 = pygame.image.load('images/bg.jfif')
+    bg = pygame.image.load('images/spacea.jpeg')
+    # bg= pygame.transform.scale(bg, (1250, 750))
     
     pygame.display.set_caption("The Invaison")
 
@@ -43,7 +43,7 @@ def run_game():
             gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
 
-        gf.update_screen(ai_settings, screen, bg, bg1, stats, ship, aliens, bullets, play_button)
+        gf.update_screen(ai_settings, screen, bg, stats, ship, aliens, bullets, play_button)
                
 
 run_game()

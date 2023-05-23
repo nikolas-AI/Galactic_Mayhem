@@ -242,12 +242,14 @@ def read(stats):
      try:
         with open(filename) as reader:
                 for line in reader:
-                    line = enumerate(line.split(' '))
-                    if int(line[4]) > stats.high_score:
-                        hsc = line[4]
-                        with open(filename, 'w') as highscore:
-                            highscore.write(hsc)
-                            highscore.write(stats.score)
+                    linel = line.split(' ')
+                    for a, b in enumerate(linel):
+                        if int(linel[4]) > stats.high_score:
+                            hsc = linel[4]
+                            with open(filename, 'w') as highscore:
+                                highscore.write(hsc)
+                                highscore.write(stats.score)
+                            break
                     break
      except FileNotFoundError:
           write(stats)

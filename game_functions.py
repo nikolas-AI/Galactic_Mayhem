@@ -29,7 +29,7 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
       
-def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets, alien, alien_bullets):
+def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets):
     """Respond to keypress and mouse events."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:

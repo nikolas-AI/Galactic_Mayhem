@@ -16,6 +16,7 @@ def check_keydown_events(event, ai_settings, screen, stats, ship, bullets):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
+        alien_fire_bullet(ai_settings, screen, alien, alien_bullets)
     elif event.key == pygame.K_UP and stats.game_active:
          ship.rect.centery -= 50
     elif event.key == pygame.K_DOWN and stats.game_active:

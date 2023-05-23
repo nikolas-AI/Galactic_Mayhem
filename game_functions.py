@@ -248,7 +248,7 @@ def read(stats):
                             hsc = linel[4]
                             with open(filename, 'w') as highscore:
                                 highscore.write(hsc)
-                                highscore.write(stats.score)
+                                highscore.write(str(stats.score))
                             break
                     break
      except FileNotFoundError:

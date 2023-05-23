@@ -4,6 +4,7 @@ from time import sleep
 import pygame
 
 from bullet import Bullet
+from alien_bullet import Alien_Bullet
 from alien import Alien
 
 
@@ -195,6 +196,12 @@ def fire_bullet(ai_settings, screen, ship, bullets):
             new_bullet = Bullet(ai_settings, screen, ship)
             bullets.add(new_bullet)
     
+def alien_fire_bullet(ai_settings, screen, alien, bullets):
+    """Fire a bullet if limit not reached yet."""
+    #Create a newbullet and add it t the bullets group.
+    if len(bullets) < ai_settings.bullets_allowed:
+            new_bullet = Alien_Bullet(ai_settings, screen, alien)
+            bullets.add(new_bullet)
 
 
 def get_number_aliens_x(ai_settings, alien_width):

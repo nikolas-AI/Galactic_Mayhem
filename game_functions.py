@@ -239,6 +239,7 @@ def check_high_score(stats, scoreb):
 
 filename ='leaderboard.txt'
 def read(stats):
+     """Compares the previous highscore with current highscore and store the highest score."""
      try:
         with open(filename) as reader:
                 for line in reader:
@@ -257,7 +258,8 @@ def read(stats):
      except FileNotFoundError:
           write(stats)
 
-def write(stats):                  
+def write(stats):  
+    """Writes the current highscore and score."""                
     with open(filename, 'w') as highscore:
         hsc = stats.high_score
         highscore.write(f"Your Highest score is: {hsc}\n")

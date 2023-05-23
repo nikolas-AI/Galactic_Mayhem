@@ -16,6 +16,7 @@ def check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
+    elif event.key == pygame.K_a:
         alien_fire_bullet(ai_settings, screen, alien, alien_bullets)
     elif event.key == pygame.K_UP and stats.game_active:
          ship.rect.centery -= 50
@@ -29,7 +30,7 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
       
-def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets):
+def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets, alien, alien_bullets):
     """Respond to keypress and mouse events."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -74,7 +75,7 @@ def check_play_button(ai_settings, screen, stats, scoreb, play_button, ship, ali
           ship.center_ship()
                
 
-def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets, play_button):
+def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets, play_button, alien_bullets):
         """Updates images on the screen and flip to the new screen."""
         #Redraw the screen during each pass through the loop
         screen.fill(ai_settings.bg_color)
@@ -84,6 +85,9 @@ def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets,
         #Redraw all bullets behind ship and aliens.
         for bullet in bullets.sprites():
             bullet.draw_bullets()
+
+        for bullet in alien_bullets.sprites():
+             bullet.draw_alien_bullets()
 
         ship.blitme()
         aliens.draw(screen)
@@ -196,13 +200,23 @@ def fire_bullet(ai_settings, screen, ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
             new_bullet = Bullet(ai_settings, screen, ship)
             bullets.add(new_bullet)
-    
+
+def update_alien_bullets(alien_bullets):
+        """Update position of bullets and get rid of old bullets."""
+        #Update bullet positions.
+        alien_bullets.update()
+
+        #Get rid of bullets that have disappeared.
+        for bullet in alien_bullets.copy():
+            if bullet.rect.top >= 700:
+                alien_bullets.remove(bullet)   
+
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
     """Fire a bullet if limit not reached yet."""
     #Create a newbullet and add it t the bullets group.
     if len(alien_bullets) < ai_settings.bullets_allowed:
-            new_bullet = Alien_Bullet(ai_settings, screen, alien)
-            alien_bullets.add(new_bullet)
+            new_alien_bullet = Alien_Bullet(ai_settings, screen, alien)
+            alien_bullets.add(new_alien_bullet)
 
 
 def get_number_aliens_x(ai_settings, alien_width):

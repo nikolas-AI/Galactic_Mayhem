@@ -250,10 +250,7 @@ def read(stats):
                                 highscore.write(f"Your Highest score is: {hsc}\n")
                                 highscore.write(f"Your recent score is: {stats.score}\n")
                         else:
-                             hsc = stats.high_score
-                             with open(filename, 'w') as highscore:
-                                highscore.write(f"Your Highest score is: {hsc}\n")
-                                highscore.write(f"Your recent score is: {stats.score}\n")
+                            write(stats)
                              
                         break
                     break

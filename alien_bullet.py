@@ -12,7 +12,7 @@ class Alien_Bullet(Sprite):
 
         #Create a bullet at (0,0) and then set the correct position.
         self.rect = pygame.Rect(0, 0, ai_settings.bullet_width, ai_settings.bullet_height)
-        self.rect.centerx = alien.x
+        self.rect.centerx = alien.rect.centerx
         self.rect.top = alien.rect.bottom
 
         #Store the bullet's position as a decimal value.

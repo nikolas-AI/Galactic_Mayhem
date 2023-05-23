@@ -7,8 +7,7 @@ from score import Scoreboard
 from button import Button
 from ship import Ship
 import game_functions as gf
-from alien import Alien
-
+from game_functions import create_alien as ca
 
 def run_game():
     #Initialize game and create a screen object  
@@ -34,7 +33,7 @@ def run_game():
 
     #Make group to store aliens and the bullets.
     aliens = Group()
-    alien = Alien(ai_settings, screen)
+    alien = ca.alien
     alien_bullets = Group()
 
     # Create the fleet of aliens.

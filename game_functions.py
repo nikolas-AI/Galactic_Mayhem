@@ -247,9 +247,15 @@ def read(stats):
                         if int(linel[4]) > stats.high_score:
                             hsc = linel[4]
                             with open(filename, 'w') as highscore:
-                                highscore.write(hsc)
-                                highscore.write(str(stats.score))
-                            break
+                                highscore.write(f"Your Highest score is: {hsc}\n")
+                                highscore.write(f"Your recent score is: {stats.score}\n")
+                        else:
+                             hsc = stats.high_score
+                             with open(filename, 'w') as highscore:
+                                highscore.write(f"Your Highest score is: {hsc}\n")
+                                highscore.write(f"Your recent score is: {stats.score}\n")
+                             
+                        break
                     break
      except FileNotFoundError:
           write(stats)

@@ -170,7 +170,8 @@ def ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bu
         ship.center_ship()
 
         #Pause
-        sleep(1)
+        # sleep(1)
+        read(stats)     
      else:
         stats.game_active = False
         pygame.mouse.set_visible(True)

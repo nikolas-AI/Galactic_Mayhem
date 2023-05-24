@@ -190,7 +190,7 @@ def update_aliens(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      #Look for aliens hitting the bottom of the screen.
      check_aliens_bottom(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
 
-     #Look for the alien_ship collections.
+     #Look for the alien_ship collisons.
      if pygame.sprite.spritecollideany(ship, aliens):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
 
@@ -211,9 +211,9 @@ def update_alien_bullets(alien_bullets):
             if bullet.rect.top >= 700:
                 alien_bullets.remove(bullet) 
 
-def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
+def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets):
      
-     if pygame.sprite.spritecollideany(ship, aliens):
+     if pygame.sprite.spritecollideany(ship, alien_bullets):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
 
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):

@@ -1,6 +1,8 @@
 import pygame
 from pygame.sprite import Sprite
 
+from game_stats import GameStats
+
 class Ship(Sprite):
 
     def __init__(self, ai_settings, screen):
@@ -12,8 +14,15 @@ class Ship(Sprite):
         
         self.ai_settings = ai_settings
 
-        #Load the ship image and get its rect.
-        self.image = pygame.image.load('images/shipb.png')
+        statsa = GameStats(ai_settings)
+        #Load the ship image according to levels and get its rect.
+        if statsa.level > 1 and statsa.level <= 7:
+            self.image = pygame.image.load('images/shipa.png')
+        elif statsa.level > 7 and statsa.level < 11:
+            self.image = pygame.image.load('images/shipb.png')
+        else:
+            self.image = pygame.image.load('images/shipc.png')
+
         self.image = pygame.transform.scale(self.image, (60,60))
         self.rect = self.image.get_rect()
 

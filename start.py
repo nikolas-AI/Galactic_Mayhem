@@ -7,7 +7,6 @@ from score import Scoreboard
 from button import Button
 from ship import Ship
 import game_functions as gf
-# from game_functions import create_alien as cf
 from alien import Alien
 
 def run_game():
@@ -55,7 +54,7 @@ def run_game():
             gf.update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 
         gf.update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets, play_button, alien_bullets)
-               
+  
 
 run_game()
   

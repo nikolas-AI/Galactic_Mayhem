@@ -8,7 +8,7 @@ from alien_bullet import Alien_Bullet
 from alien import Alien
 
 
-def check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien, alien_bullets):
+def check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien_bullets):
     """"Resopnd to key presses"""
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True
@@ -17,7 +17,7 @@ def check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
     elif event.key == pygame.K_a:
-        alien_fire_bullet(ai_settings, screen, alien, alien_bullets)
+        alien_fire_bullet(ai_settings, screen, alien_bullets)
     elif event.key == pygame.K_UP and stats.game_active:
          ship.rect.centery -= 50
     elif event.key == pygame.K_DOWN and stats.game_active:
@@ -30,14 +30,14 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_LEFT:
         ship.moving_left = False
       
-def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets, alien, alien_bullets):
+def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, bullets, alien_bullets):
     """Respond to keypress and mouse events."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
 
         elif event.type == pygame.KEYDOWN:
-            check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien, alien_bullets)
+            check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien_bullets)
 
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, ship)
@@ -218,11 +218,11 @@ def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien
      if pygame.sprite.spritecollideany(ship, alien_bullets):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 
-def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
+def alien_fire_bullet(ai_settings, screen, alien_bullets):
     """Fire a bullet if limit not reached yet."""
     #Create a newbullet and add it t the bullets group.
     if len(alien_bullets) < ai_settings.bullets_allowed:
-            new_alien_bullet = Alien_Bullet(ai_settings, screen, alien)
+            new_alien_bullet = Alien_Bullet(ai_settings, screen)
             alien_bullets.add(new_alien_bullet)
 
 

@@ -36,7 +36,6 @@ def run_game():
     #Make group to store aliens and the bullets.
     aliens = Group()
     alien_bullets = Group()
-    alien = Alien(ai_settings, screen)
 
 
 
@@ -45,7 +44,7 @@ def run_game():
 
     #Start the main loop for the game
     while True:
-        gf.check_events(ai_settings, screen, stats, scoreb, play_button, ship, aliens, bullets, alien, alien_bullets)
+        gf.check_events(ai_settings, screen, stats, scoreb, play_button, ship, aliens, bullets, alien_bullets)
         
         if stats.game_active:
             ship.update()

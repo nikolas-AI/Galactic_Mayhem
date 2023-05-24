@@ -284,7 +284,7 @@ def compare_high_scores(stats, linel):
      """Compares the previous highscore with current highscore and stores the highest score."""
      for a, b in enumerate(linel):
          if int(linel[4]) > stats.high_score:
-             hsc = "{:,}".format(linel[4])
+             hsc = linel[4]
              with open(filename, 'w') as highscore:
                  highscore.write(f"Your Highest score is: {hsc}\n")
                  highscore.write(f"Your recent score is: {stats.score}\n")
@@ -296,6 +296,6 @@ def compare_high_scores(stats, linel):
 def write(stats):  
     """Writes the current highscore and score."""                
     with open(filename, 'w') as highscore:
-        hsc = "{:,}".format(stats.high_score)
+        hsc = stats.high_score
         highscore.write(f"Your Highest score is: {hsc}\n")
         highscore.write(f"Your recent score is: {stats.score}\n")

@@ -216,7 +216,7 @@ def update_alien_bullets(alien_bullets):
 def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets):
      
      if pygame.sprite.spritecollideany(ship, alien_bullets):
-          ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
+          ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
     """Fire a bullet if limit not reached yet."""

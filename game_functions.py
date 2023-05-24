@@ -190,7 +190,7 @@ def update_aliens(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      #Look for aliens hitting the bottom of the screen.
      check_aliens_bottom(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
 
-     #Look for the aluen_ship collections.
+     #Look for the alien_ship collections.
      if pygame.sprite.spritecollideany(ship, aliens):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
 
@@ -209,12 +209,13 @@ def update_alien_bullets(alien_bullets):
         #Get rid of bullets that have disappeared.
         for bullet in alien_bullets.copy():
             if bullet.rect.top >= 700:
-                alien_bullets.remove(bullet)   
+                alien_bullets.remove(bullet) 
+
 def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
      
      if pygame.sprite.spritecollideany(ship, aliens):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
-          
+
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
     """Fire a bullet if limit not reached yet."""
     #Create a newbullet and add it t the bullets group.

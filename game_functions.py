@@ -210,7 +210,11 @@ def update_alien_bullets(alien_bullets):
         for bullet in alien_bullets.copy():
             if bullet.rect.top >= 700:
                 alien_bullets.remove(bullet)   
-
+def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets):
+     
+     if pygame.sprite.spritecollideany(ship, aliens):
+          ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets)
+          
 def alien_fire_bullet(ai_settings, screen, alien, alien_bullets):
     """Fire a bullet if limit not reached yet."""
     #Create a newbullet and add it t the bullets group.
@@ -239,6 +243,7 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
      alien.rect.x = alien.x
      alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
      aliens.add(alien)
+     return alien
 
 def create_fleet(ai_settings, screen, ship, aliens):
      """Create a full fleet of aliens."""

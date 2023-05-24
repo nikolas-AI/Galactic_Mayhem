@@ -202,7 +202,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
             bullets.add(new_bullet)
 
 def update_alien_bullets(alien_bullets):
-        """Update position of bullets and get rid of old bullets."""
+        """Update position of alien_bullets and get rid of old bullets."""
         #Update bullet positions.
         alien_bullets.update()
 

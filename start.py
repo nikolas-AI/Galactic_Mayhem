@@ -16,8 +16,8 @@ def run_game():
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
 
-    # bg = pygame.image.load('images/space.jpeg')
-    bg = pygame.image.load('images/spacea.png')
+    # bg = pygame.image.load('images/spacea.png')
+    bg = pygame.image.load('images/spaceb.png')
     bg= pygame.transform.scale(bg, (1250, 700))
     
     pygame.display.set_caption("The Invaison")

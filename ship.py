@@ -16,9 +16,9 @@ class Ship(Sprite):
 
         statsa = GameStats(ai_settings)
         #Load the ship image according to levels and get its rect.
-        if statsa.level > 1 and statsa.level <= 7:
+        if (statsa.level > 0) and (statsa.level <= 7):
             self.image = pygame.image.load('images/shipa.png')
-        elif statsa.level > 7 and statsa.level < 11:
+        elif (statsa.level > 7) and (statsa.level < 11):
             self.image = pygame.image.load('images/shipb.png')
         else:
             self.image = pygame.image.load('images/shipc.png')

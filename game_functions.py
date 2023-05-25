@@ -39,7 +39,7 @@ def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, b
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
-            
+
         elif event.type == alien_bullet_timer_event:
             alien_fire_bullet(ai_settings, screen, alien_bullets)
 

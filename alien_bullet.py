@@ -11,14 +11,14 @@ class Alien_Bullet(Sprite):
         super().__init__()
 
         self.screen = screen
-        
+
         #Change the x-axis of alien_bullet randomly
-        self.a = randint(10, 1000)
+        self.a = randint(10, 990)
         self.b = 170
        
 
         #Create 2 bullet at (185,170) and (585, 170) 
-        self.rect = pygame.Rect(self.a, self.b, ai_settings.bullet_width, ai_settings.bullet_height)
+        self.rect = pygame.Rect(self.a, self.b, 5, ai_settings.bullet_height)
         
 
         #Store the bullet's position as a decimal value.
@@ -36,5 +36,5 @@ class Alien_Bullet(Sprite):
 
     def draw_alien_bullets(self):
         """Draw the bullet to the screen."""
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        pygame.draw.rect(self.screen, 'Red', self.rect)
 

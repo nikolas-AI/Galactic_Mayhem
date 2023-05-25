@@ -7,6 +7,10 @@ from bullet import Bullet
 from alien_bullet import Alien_Bullet
 from alien import Alien
 
+pygame.init()
+# Set up timer
+alien_bullet_timer_event = pygame.USEREVENT + 1
+pygame.time.set_timer(alien_bullet_timer_event, 5000)  # Trigger every 5 seconds
 
 def check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien_bullets):
     """"Resopnd to key presses"""
@@ -35,6 +39,9 @@ def check_events(ai_settings, screen, stats,scoreb, play_button, ship, aliens, b
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+            
+        elif event.type == alien_bullet_timer_event:
+            alien_fire_bullet(ai_settings, screen, alien_bullets)
 
         elif event.type == pygame.KEYDOWN:
             check_keydown_events(event, ai_settings, screen, stats, ship, bullets, alien_bullets)

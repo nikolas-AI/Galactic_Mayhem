@@ -215,7 +215,7 @@ def update_alien_bullets(alien_bullets):
                 alien_bullets.remove(bullet) 
 
 def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets):
-     
+     '''Look for the alien_bullet - ship collisons.'''
      if pygame.sprite.spritecollideany(ship, alien_bullets):
           ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 

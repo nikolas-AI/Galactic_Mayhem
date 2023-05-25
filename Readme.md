@@ -1,6 +1,5 @@
-In Alien Invasion, the player controls a ship that appears at the bottom center of the screen.
-The player can move ship right and left using the arrows keys and shoot bullets using the spacebar.
-when the game begins, a fleet of aliens fills the sky and moves across and down the screen.
-The player shoots and destroys the aliens. If the player shoots the aliens, as new fleet appears that moves faster than the previous fleet.
-If any aliens hits the player's ship or reaches the bottom of the screen, the player loses a ship.
-If the player loses three ships, the game ends.
+In the game "The Invasion" players control a ship positioned at the bottom center of the screen. They can maneuver the ship horizontally using the arrow keys and shoot bullets by pressing the spacebar. At the start of the game, a fleet of aliens fills the sky, moving across the screen and gradually descending.
+
+Players must aim to destroy the aliens by shooting at them with their ship's bullets. Whenever an alien is successfully hit, a new fleet swiftly replaces the defeated one, and this fresh fleet moves even faster than its predecessor. To increase the challenge, random bullets are fired from various locations on the screen, creating additional obstacles and requiring players to stay alert and dodge incoming projectiles.
+
+However, players must be careful as they navigate through the alien onslaught. If an alien collides with the player's ship or manages to reach the bottom of the screen, one ship is lost. Players start with three ships, and if they lose all three, the game comes to an end, concluding their battle against the invading extraterrestrial forces.

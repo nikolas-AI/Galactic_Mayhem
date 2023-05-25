@@ -12,6 +12,7 @@ from alien import Alien
 def run_game():
     #Initialize game and create a screen object  
     pygame.init()
+    # clock = pygame.time.Clock()
     ai_settings = Settings()
     screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
 
@@ -54,7 +55,7 @@ def run_game():
             gf.update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 
         gf.update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets, play_button, alien_bullets)
-  
+        # clock.tick(100)
 
 run_game()
   

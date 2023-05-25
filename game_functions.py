@@ -85,7 +85,8 @@ def update_screen(ai_settings, screen, bg, stats, scoreb, ship, aliens, bullets,
         #Redraw all bullets behind ship and aliens.
         for bullet in bullets.sprites():
             bullet.draw_bullets()
-
+        
+        
         for bullet in alien_bullets.sprites():
              bullet.draw_alien_bullets()
 
@@ -216,8 +217,8 @@ def update_alien_bullets(alien_bullets):
 
 def update_ship(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets):
      '''Look for the alien_bullet - ship collisons.'''
-     if pygame.sprite.spritecollideany(ship, alien_bullets):
-          ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
+     if pygame.sprite.spritecollideany(ship, alien_bullets):          
+        ship_hit(ai_settings, stats, scoreb, screen, ship, aliens, bullets, alien_bullets)
 
 def alien_fire_bullet(ai_settings, screen, alien_bullets):
     """Fire a bullet if limit not reached yet."""

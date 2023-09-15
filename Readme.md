@@ -1,4 +1,4 @@
-In the game "The Invasion" players control a ship positioned at the bottom center of the screen. They can maneuver the ship horizontally using the arrow keys and shoot bullets by pressing the spacebar. At the start of the game, a fleet of aliens fills the sky, moving across the screen and gradually descending.
+In the game "Galactic Mayhem:The Invasion" players control a ship positioned at the bottom center of the screen. They can maneuver the ship horizontally using the arrow keys and shoot bullets by pressing the spacebar. At the start of the game, a fleet of aliens fills the sky, moving across the screen and gradually descending.
 
 Players must aim to destroy the aliens by shooting at them with their ship's bullets. Whenever an alien is successfully hit, a new fleet swiftly replaces the defeated one, and this fresh fleet moves even faster than its predecessor. To increase the challenge, random bullets are fired from various locations on the screen, creating additional obstacles and requiring players to stay alert and dodge incoming projectiles.
 

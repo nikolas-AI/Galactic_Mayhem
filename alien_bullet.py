@@ -15,7 +15,7 @@ class Alien_Bullet(Sprite):
         #Change the x-axis of alien_bullet randomly
         self.a = randint(10, 990)
         self.b = 170
-       
+
 
         #Create 2 bullet at (185,170) and (585, 170) 
         self.rect = pygame.Rect(self.a, self.b, 5, ai_settings.bullet_height)
